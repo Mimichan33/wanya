@@ -1,6 +1,6 @@
 const answer = Math.floor(Math.random() * 100) + 1;
 const maxTry = 5;
-const passcode = "2743"; // ← 暗証番号
+const passcode = "0206"; // ← 暗証番号
 
 let count = 0;
 let finished = false;
