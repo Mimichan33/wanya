@@ -1,3 +1,71 @@
+body {
+  margin: 0;
+  font-family: "Rounded Mplus 1c", "Arial", sans-serif;
+  background: #fff6e5;
+  text-align: center;
+}
+
+.container {
+  padding: 40px 20px;
+}
+
+h1 {
+  color: #ff8c42;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 20px;
+  background: #ffb703;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.waddledee {
+  width: 120px;
+  height: 120px;
+  margin: 20px auto;
+  background: orange;
+  border-radius: 50%;
+  position: relative;
+}
+
+.waddledee::before,
+.waddledee::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 35px;
+}
+
+.waddledee::before {
+  left: 30px;
+}
+
+.waddledee::after {
+  right: 30px;
+}
+
+.mouth {
+  width: 30px;
+  height: 10px;
+  border-radius: 0 0 20px 20px;
+  background: #000;
+  position: absolute;
+  bottom: 35px;
+  left: 45px;
+}
+
 /* ===== 読込み画面 全体 ===== */
 
 .loading-bg {
