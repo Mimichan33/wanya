@@ -65,3 +65,65 @@ button:hover {
   bottom: 35px;
   left: 45px;
 }
+
+.loading-area {
+  position: relative;
+  height: 100vh;
+  background: #fff6e5;
+  overflow: hidden;
+  text-align: center;
+}
+
+.loading-area p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* ワドルディ走る */
+.waddledee.run {
+  position: absolute;
+  bottom: 120px;
+  left: -120px;
+  animation: run 3s linear forwards;
+}
+
+/* 走り切った表情 */
+.waddledee.finish {
+  animation: none;
+}
+
+/* 走る動き */
+@keyframes run {
+  from {
+    left: -120px;
+  }
+  to {
+    left: calc(100% - 120px);
+  }
+}
+
+/* ゲージ */
+.gauge {
+  width: 70%;
+  height: 16px;
+  margin: 0 auto;
+  background: #ffe0b2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gauge #bar {
+  width: 0%;
+  height: 100%;
+  background: #ff8c42;
+  animation: load 3s linear forwards;
+}
+
+@keyframes load {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
