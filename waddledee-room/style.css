@@ -66,64 +66,54 @@ button:hover {
   left: 45px;
 }
 
+/* ===== 読込み画面 ===== */
+
 .loading-area {
-  position: relative;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #fff6e5;
-  overflow: hidden;
-  text-align: center;
 }
 
-.loading-area p {
-  margin-top: 20px;
-  font-size: 18px;
+.gauge-wrapper {
+  position: relative;
+  width: 70%;
 }
 
-/* ワドルディ走る */
-.waddledee.run {
+/* ワドルディ（ゲージの上） */
+#waddle-run {
   position: absolute;
-  bottom: 120px;
-  left: -120px;
-  animation: run 3s linear forwards;
-}
-
-/* 走り切った表情 */
-.waddledee.finish {
-  animation: none;
-}
-
-/* 走る動き */
-@keyframes run {
-  from {
-    left: -120px;
-  }
-  to {
-    left: calc(100% - 120px);
-  }
+  bottom: 25px;
+  left: 0;
+  width: 80px;
+  animation: move 3s linear forwards;
 }
 
 /* ゲージ */
 .gauge {
-  width: 70%;
+  width: 100%;
   height: 16px;
-  margin: 0 auto;
   background: #ffe0b2;
   border-radius: 10px;
   overflow: hidden;
 }
 
-.gauge #bar {
+#bar {
   width: 0%;
   height: 100%;
   background: #ff8c42;
   animation: load 3s linear forwards;
 }
 
+/* アニメーション */
 @keyframes load {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+@keyframes move {
+  from { left: 0%; }
+  to   { left: calc(100% - 80px); }
 }
