@@ -217,7 +217,7 @@ button:hover {
 }
 
 .talk.second {
-  left: 22%;
+  left: 42%;
   top: 34%;
 }
 
@@ -226,8 +226,8 @@ button:hover {
   position: absolute;
   right: 12%;
   bottom: 8%;
-  width: 75vw;
-  max-width: 480px;
+  width: 90vw;
+  max-width: 600px;
   z-index: 2;
 }
 
@@ -235,7 +235,7 @@ button:hover {
 
 .menu-buttons {
   position: absolute;
-  bottom: 4%;
+  bottom: 24%;
   left: 50%;
   transform: translateX(-50%);
   width: 92vw;
