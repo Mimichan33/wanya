@@ -157,3 +157,85 @@ button:hover {
   from { left: 0%; }
   to   { left: calc(100% - min(34vw, 140px)); }
 }
+
+/* ===== room.html 全体 ===== */
+
+.room-bg {
+  background: #fff6e5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.room-area {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* ===== 飾りゾーン ===== */
+
+.room-deco {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 45%;
+}
+
+/* 話しているワドルディ */
+.talk {
+  position: absolute;
+  width: 26vw;
+  max-width: 120px;
+}
+
+.talk.left {
+  left: 5%;
+  top: 10%;
+}
+
+.talk.second {
+  left: 20%;
+  top: 14%;
+}
+
+/* 木 */
+.tree {
+  position: absolute;
+  right: 5%;
+  top: 0;
+  width: 42vw;
+  max-width: 220px;
+}
+
+/* ===== 寝ているワドルディ ===== */
+
+.sleep-waddle {
+  position: absolute;
+  right: 4%;
+  bottom: 28%;
+  width: 48vw;
+  max-width: 240px;
+  z-index: 2;
+}
+
+/* ===== ボタンエリア ===== */
+
+.menu-buttons {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92vw;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.menu-buttons button {
+  padding: 18px;
+  font-size: 20px;
+  border-radius: 22px;
+}
+
