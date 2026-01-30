@@ -320,3 +320,65 @@ button:hover {
   font-size: 30px;      /* 文字を主役級に */
   border-radius: 32px;
 }
+
+/* ===== message.html ===== */
+
+.message-bg {
+  background: #fff6e5;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Rounded Mplus 1c", "Arial", sans-serif;
+}
+
+.message-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ワドルディ（画面下・最大） */
+.message-waddledee {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95vw;          /* スマホ最大級 */
+  max-width: 520px;
+  z-index: 1;
+}
+
+/* 吹き出し */
+.message-bubble {
+  position: absolute;
+  bottom: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88vw;
+  max-width: 500px;
+
+  background: white;
+  padding: 28px 24px;
+  border-radius: 26px;
+
+  font-size: 7vw;
+  max-font-size: 30px;
+  font-weight: bold;
+  color: #ff8c42;
+  text-align: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* 吹き出しのしっぽ */
+.message-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 22px 18px 0 18px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+}
+
