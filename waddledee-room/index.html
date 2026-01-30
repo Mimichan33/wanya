@@ -4,20 +4,38 @@
   <meta charset="UTF-8">
   <title>読込み中...</title>
   <link rel="stylesheet" href="style.css">
-  <script>
-    setTimeout(() => {
-      location.href = "room.html";
-    }, 2500);
-  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>読込み中...</h1>
-    <div class="waddledee">
-      <div class="mouth"></div>
-    </div>
-    <p>ワドルディがお部屋を準備しています</p>
+
+<div class="loading-area">
+  <div id="runner" class="waddledee run">
+    <div class="mouth"></div>
   </div>
+
+  <div class="gauge">
+    <div id="bar"></div>
+  </div>
+
+  <p>読込み中...</p>
+</div>
+
+<script>
+  const duration = 3000; // 3秒
+  const runner = document.getElementById("runner");
+  const bar = document.getElementById("bar");
+
+  // アニメーション開始
+  setTimeout(() => {
+    runner.classList.add("finish");
+  }, duration);
+
+  // 遷移
+  setTimeout(() => {
+    location.href = "room.html";
+  }, duration + 300);
+</script>
+
 </body>
 </html>
+
 
