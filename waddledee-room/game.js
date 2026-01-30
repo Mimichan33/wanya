@@ -95,6 +95,10 @@ function disableInput() {
   sendBtn.textContent = "終了";
 }
 
+    <button id="endBtn" style="display:none;" onclick="location.href='room.html'">
+    終了
+  </button>
+
 /* スクロール */
 function scrollBottom() {
   window.scrollTo(0, document.body.scrollHeight);
