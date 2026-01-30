@@ -3,23 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>ワドルディとゲーム</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
 </head>
 <body>
-  <div class="container">
-    <h1>数字を当ててね！</h1>
 
-    <div class="waddledee">
-      <div class="mouth"></div>
-    </div>
-
-    <div id="chat"></div>
-
-    <input type="number" id="guess" placeholder="1〜100">
-    <br>
-    <button onclick="check()">送信</button>
+  <!-- 上部イメージ -->
+  <div class="top-image">
+    <img src="img01.png" alt="ワドルディゲーム">
   </div>
 
-  <script src="game.js"></script>
+  <!-- トーク画面 -->
+  <div class="chat-area">
+
+    <!-- ワドルディ -->
+    <div class="chat left">
+      <img src="img02.png" class="icon">
+      <div class="bubble">
+        ぼくはもう数字を決めたよ！<br>
+        1〜100の中だよ！
+      </div>
+    </div>
+
+    <!-- ユーザー（例） -->
+    <div class="chat right">
+      <div class="bubble">
+        50
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 入力エリア -->
+  <div class="input-area">
+    <input type="number" placeholder="数字を入力">
+    <button>送信</button>
+  </div>
+
 </body>
 </html>
+
