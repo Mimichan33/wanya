@@ -3,43 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>ワドルディの部屋</title>
-  
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="room-bg">
-    <link rel="stylesheet" href="style.css">
-    <body class="loading-bg" id="page">
 
+<body class="room-bg" id="page">
 
-<div class="room-area">
+  <div class="room-area">
 
-  <!-- 背景用 大きな画像ゾーン -->
-  <div class="room-visual">
+    <!-- 背景用 大きな画像ゾーン -->
+    <div class="room-visual">
 
-    <!-- 大きな木（一番奥） -->
-    <img src="image03.png" class="bg-tree">
+      <!-- 木（背景） -->
+      <img src="image03.png" class="bg-tree">
 
-    <!-- 話しているワドルディ -->
-    <img src="img04.png" class="talk big left">
-    <img src="img05.png" class="talk big left second">
+      <!-- 話しているワドルディ -->
+      <img src="img04.png" class="talk big left">
+      <img src="img05.png" class="talk big left second">
 
-    <!-- 寝ているワドルディ（主役） -->
-    <img src="img06.png" class="sleep-main">
+      <!-- 寝ているワドルディ（主役） -->
+      <img src="img06.png" class="sleep-main">
+
+      <!-- 追加ワドルディたち -->
+      <img src="img07.png" class="extra e7">
+      <img src="img08.png" class="extra e8">
+      <img src="img09.png" class="extra e9">
+      <img src="img10.png" class="extra e10">
+
+    </div>
+
+    <!-- ボタンエリア -->
+    <div class="menu-buttons">
+      <button onclick="location.href='game.html'">
+        🎮 ワドルディとゲームをする
+      </button>
+      <button onclick="location.href='passcode.html'">
+        💌 ワドルディのメッセージを見る
+      </button>
+    </div>
 
   </div>
-
-  <!-- ボタンエリア（変更なし） -->
-  <div class="menu-buttons">
-    <button onclick="location.href='game.html'">
-      🎮 ワドルディとゲームをする
-    </button>
-    <button onclick="location.href='passcode.html'">
-      💌 ワドルディのメッセージを見る
-    </button>
-  </div>
-
-</div>
 
 </body>
 </html>
-
-
