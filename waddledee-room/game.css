@@ -153,5 +153,17 @@ body {
   background: #ffb347;
   color: #4a2c00;
 }
+/* 吹き出しが後から出る用 */
+.bubble.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.bubble.show {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
 
 
