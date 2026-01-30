@@ -1,85 +1,102 @@
+/* ===== 全体 ===== */
 body {
   margin: 0;
-  background: #9bb6d9; /* LINEっぽい背景 */
   font-family: sans-serif;
+
+  /* ワドルディ背景 */
+  background-color: #fff6e8;
+  background-image: url("bg-waddledee.png");
+  background-repeat: repeat;
+  background-size: 120px 120px;
 }
 
-/* 上の画像 */
+/* ===== 上部画像 ===== */
 .top-image {
   text-align: center;
-  padding: 12px 0;
+  padding: 16px 0;
 }
 
 .top-image img {
-  width: 80vw;
-  max-width: 420px;
+  width: 90vw;
+  max-width: 500px;
 }
 
-/* トークエリア */
+/* ===== トークエリア ===== */
 .chat-area {
-  padding: 12px;
-  padding-bottom: 90px;
+  padding: 18px;
+  padding-bottom: 140px;
+  font-size: 19px;
 }
 
-/* 共通 */
+/* ===== 共通トーク ===== */
 .chat {
   display: flex;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-/* ワドルディ側 */
+/* ===== ワドルディ側 ===== */
 .chat.left {
   align-items: flex-start;
 }
 
 .chat.left .icon {
-  width: 56px;
-  height: 56px;
-  margin-right: 8px;
+  width: 64px;
+  height: 64px;
+  margin-right: 10px;
 }
 
 .chat.left .bubble {
-  background: white;
-  padding: 12px 14px;
-  border-radius: 18px;
-  max-width: 70%;
+  background: #ffb347;      /* ワドルディカラー */
+  color: #4a2c00;
+  padding: 16px 18px;
+  border-radius: 22px;
+  max-width: 75%;
+  font-size: 20px;
+  border: 3px solid #ffffff;
 }
 
-/* ユーザー側 */
+/* ===== ユーザー側 ===== */
 .chat.right {
   justify-content: flex-end;
 }
 
 .chat.right .bubble {
-  background: #7df07d;
-  padding: 12px 14px;
-  border-radius: 18px;
-  max-width: 70%;
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 22px;
+  max-width: 75%;
+  font-size: 20px;
+  border: 3px solid #dddddd;
 }
 
-/* 入力欄 */
+/* ===== 入力エリア（スマホ最重要） ===== */
 .input-area {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #eee;
-  padding: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 14px;
   display: flex;
-  gap: 8px;
+  gap: 12px;
+  box-sizing: border-box;
 }
 
 .input-area input {
   flex: 1;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 26px;
+  border: 3px solid #ffb347;
+  outline: none;
 }
 
 .input-area button {
-  font-size: 16px;
-  padding: 10px 16px;
-  border-radius: 20px;
+  font-size: 20px;
+  padding: 14px 22px;
+  border-radius: 26px;
   border: none;
+  background: #ffb347;
+  color: #4a2c00;
 }
+
