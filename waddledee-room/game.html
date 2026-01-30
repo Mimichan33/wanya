@@ -2,40 +2,40 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ワドルディとゲーム</title>
+  <title>ワドルディ数字当てゲーム</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="game.css">
 </head>
+
 <body>
+  <div class="container">
 
-  <!-- 説明文 -->
-  <div class="description">
-    ワドルディが考えた数字を当てよう！<br>
-    5回の質問をして、正解を決めてね☆
-  </div>
+    <!-- 説明エリア -->
+    <div class="top-area">
+      <p>
+        ワドルディが考えた数字を当てよう！<br>
+        5回の質問をして、正解を決めてね☆
+      </p>
+      <img src="img01.png" alt="ワドルディ">
+    </div>
 
-  <!-- 上部イメージ -->
-  <div class="top-image">
-    <img src="img01.png" alt="ゲーム説明">
-  </div>
-
-  <!-- トーク画面 -->
-  <div class="chat-area" id="chatArea">
-
-    <div class="chat left">
-      <img src="img02.png" class="icon" alt="ワドルディ">
-      <div class="bubble left-bubble">
-        ぼくはもう数字を決めたよ！<br>
-        1〜100の中だよ！
+    <!-- チャット -->
+    <div id="chat" class="chat">
+      <div class="message waddle">
+        <img src="img_waddle_icon.png" class="icon">
+        <div class="bubble">
+          ぼくはもう数字を決めたよ！<br>
+          1〜100の中だよ 🌟
+        </div>
       </div>
     </div>
 
-  </div>
+    <!-- 入力 -->
+    <div class="input-area">
+      <input id="numInput" type="number" placeholder="数字を入力">
+      <button id="sendBtn">送信</button>
+    </div>
 
-  <!-- 入力エリア -->
-  <div class="input-area">
-    <input type="number" id="userInput" placeholder="数字を入力">
-    <button id="sendBtn">送信</button>
   </div>
 
   <script src="game.js"></script>
