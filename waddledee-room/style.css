@@ -238,7 +238,7 @@ button:hover {
   bottom: 24%;
   left: 50%;
   transform: translateX(-50%);
-  width: 92vw;
+  width: 130vw;
   max-width: 420px;
   display: flex;
   flex-direction: column;
