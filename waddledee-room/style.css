@@ -350,7 +350,7 @@ button:hover {
 /* 吹き出し */
 .message-bubble {
   position: absolute;
-  bottom: 42%;
+  bottom: 60%;
   left: 50%;
   transform: translateX(-50%);
   width: 88vw;
@@ -374,10 +374,10 @@ button:hover {
 .message-bubble::after {
   content: "";
   position: absolute;
-  bottom: -22px;
+  bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  border-width: 22px 18px 0 18px;
+  border-width: 12px 10px 0 10px;
   border-style: solid;
   border-color: white transparent transparent transparent;
 }
