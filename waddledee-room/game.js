@@ -1,101 +1,85 @@
-const answer = Math.floor(Math.random() * 100) + 1;
-const maxTry = 5;
-const passcode = "2743"; // ← 暗証番号
-
+let answer = Math.floor(Math.random() * 100) + 1; // 1〜100
 let count = 0;
-let finished = false;
+let maxCount = 5;
+let gameOver = false;
 
-const chatArea = document.getElementById("chatArea");
-const input = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
+const input = document.getElementById("numberInput");
+const chatArea = document.getElementById("chatArea");
 
-sendBtn.addEventListener("click", sendMessage);
+/* 吹き出し追加用 */
+function addWaddleDeeIcon() {
+  const icon = document.createElement("div");
+  icon.className = "waddledee-icon-only";
+  chatArea.appendChild(icon);
+  chatArea.scrollTop = chatArea.scrollHeight;
+  return icon;
+}
 
-function sendMessage() {
-  if (finished) return;
+function addWaddleDeeBubble(text) {
+  const bubble = document.createElement("div");
+  bubble.className = "bubble waddledee";
+  bubble.textContent = text;
+  chatArea.appendChild(bubble);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+function addUserBubble(text) {
+  const bubble = document.createElement("div");
+  bubble.className = "bubble user";
+  bubble.textContent = text;
+  chatArea.appendChild(bubble);
+  chatArea.scrollTop = chatArea.scrollHeight;
+}
+
+/* 初期メッセージ */
+window.onload = () => {
+  const icon = addWaddleDeeIcon();
+  setTimeout(() => {
+    addWaddleDeeBubble("えへへ…もう数字は決めたよ！当ててみてね☆");
+  }, 500);
+};
+
+sendBtn.addEventListener("click", () => {
+
+  /* === ゲーム終了後 === */
+  if (gameOver) {
+    // ★ ここが今回の追加ポイント
+    location.href = "room.html";
+    return;
+  }
 
   const value = Number(input.value);
   if (!value || value < 1 || value > 100) return;
 
   count++;
-  addUserMessage(value);
+  addUserBubble(value + " だと思う！");
+
   input.value = "";
 
+  /* ワドルディ：アイコン → 吹き出し */
   setTimeout(() => {
-    replyFromWaddledee(value);
-  }, 600);
-}
-
-/* ユーザー吹き出し */
-function addUserMessage(text) {
-  const chat = document.createElement("div");
-  chat.className = "chat right";
-
-  const bubble = document.createElement("div");
-  bubble.className = "bubble right-bubble";
-  bubble.textContent = text;
-
-  chat.appendChild(bubble);
-  chatArea.appendChild(chat);
-  scrollBottom();
-}
-
-/* ワドルディ返信 */
-function replyFromWaddledee(value) {
-  let message = "";
-  let isSuccess = false;
-
-  if (value === answer) {
-    message = `🎉 正解だよ！\n暗証番号は【${passcode}】だよ！`;
-    isSuccess = true;
-    finished = true;
-  } else if (count >= maxTry) {
-    message = `残念…😢\n正解は ${answer} だったよ。\nまた遊んでね！`;
-    finished = true;
-  } else if (value < answer) {
-    message = "もっと大きいよ！";
-  } else {
-    message = "もっと小さいよ！";
-  }
-
-  const chat = document.createElement("div");
-  chat.className = "chat left";
-
-  const icon = document.createElement("img");
-  icon.src = "img02.png";
-  icon.className = "icon";
-
-  chat.appendChild(icon);
-  chatArea.appendChild(chat);
-  scrollBottom();
-
-  setTimeout(() => {
-    const bubble = document.createElement("div");
-    bubble.className = "bubble left-bubble hidden";
-    if (isSuccess) bubble.classList.add("success");
-    bubble.textContent = message;
-
-    chat.appendChild(bubble);
+    addWaddleDeeIcon();
 
     setTimeout(() => {
-      bubble.classList.remove("hidden");
-      bubble.classList.add("show");
-      scrollBottom();
-    }, 50);
+      if (value === answer) {
+        addWaddleDeeBubble("すごいっ！正解だよ〜！！🎉");
+        endGame();
+      } else if (count >= maxCount) {
+        addWaddleDeeBubble(`うーん残念…正解は ${answer} だったよ💦`);
+        endGame();
+      } else if (value < answer) {
+        addWaddleDeeBubble("もっと大きい数字だよ〜！");
+      } else {
+        addWaddleDeeBubble("もっと小さい数字だよ〜！");
+      }
+    }, 400);
 
-    if (finished) disableInput();
+  }, 400);
+});
 
-  }, 500);
-}
-
-/* 入力無効化 */
-function disableInput() {
-  input.disabled = true;
-  sendBtn.disabled = true;
+function endGame() {
+  gameOver = true;
   sendBtn.textContent = "終了";
-}
-
-/* スクロール */
-function scrollBottom() {
-  window.scrollTo(0, document.body.scrollHeight);
+  input.disabled = true;
 }
