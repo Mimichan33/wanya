@@ -170,84 +170,41 @@ button:hover {
 }
 
 
-/* ===== room.html 全体 ===== */
-
+/* ===== 背景1枚 ===== */
 .room-bg {
-  background: #fff6e5;
+  width: 100vw;
   height: 100vh;
-  overflow: hidden;
-}
 
-.room-area {
+  /* ★ 背景画像はここだけ */
+  background-image: url("img02.gif");
+  background-size: cover;        /* 画面いっぱい */
+  background-position: center;   /* 中央基準 */
+  background-repeat: no-repeat;
+
   position: relative;
-  height: 100%;
-  width: 100%;
 }
 
-/* ===== 飾りゾーン ===== */
-
-.room-deco {
+/* ===== ボタンを画像の上に重ねる ===== */
+.room-buttons {
   position: absolute;
-  top: 5%;
-  left: 0;
-  width: 100%;
-  height: 45%;
-}
-
-/* 話しているワドルディ */
-.talk {
-  position: absolute;
-  width: 26vw;
-  max-width: 120px;
-}
-
-.talk.left {
-  left: 5%;
-  top: 10%;
-}
-
-.talk.second {
-  left: 20%;
-  top: 14%;
-}
-
-/* 木 */
-.tree {
-  position: absolute;
-  right: 5%;
-  top: 0;
-  width: 42vw;
-  max-width: 220px;
-}
-
-/* ===== 寝ているワドルディ ===== */
-
-.sleep-waddle {
-  position: absolute;
-  right: 4%;
-  bottom: 28%;
-  width: 48vw;
-  max-width: 240px;
-  z-index: 2;
-}
-
-/* ===== ボタンエリア ===== */
-
-.menu-buttons {
-  position: absolute;
-  bottom: 4%;
+  bottom: 8%;
   left: 50%;
   transform: translateX(-50%);
-  width: 92vw;
-  max-width: 420px;
+
+  width: 90%;
+  max-width: 400px;
+
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-.menu-buttons button {
+/* ===== ボタンデザイン ===== */
+.room-buttons button {
   padding: 18px;
   font-size: 20px;
   border-radius: 22px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
 }
 
