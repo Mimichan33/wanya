@@ -2,40 +2,49 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>読込み中...</title>
+  <title>読込み中</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="loading-area">
-  <div id="runner" class="waddledee run">
-    <div class="mouth"></div>
+
+  <div class="gauge-wrapper">
+    <!-- 走っているワドルディ -->
+    <img id="waddle-run"
+         src="waddle_run.gif"
+         alt="走るワドルディ">
+
+    <!-- ゲージ -->
+    <div class="gauge">
+      <div id="bar"></div>
+    </div>
   </div>
 
-  <div class="gauge">
-    <div id="bar"></div>
-  </div>
+  <p id="loading-text">読込み中...</p>
 
-  <p>読込み中...</p>
 </div>
 
 <script>
-  const duration = 3000; // 3秒
-  const runner = document.getElementById("runner");
-  const bar = document.getElementById("bar");
+  const duration = 3000;
 
-  // アニメーション開始
   setTimeout(() => {
-    runner.classList.add("finish");
+    // 文字変更
+    document.getElementById("loading-text").textContent = "読込み完了！";
+
+    // GIF停止（走り→停止画像に切り替え）
+    const run = document.getElementById("waddle-run");
+    run.src = "waddle_stop.png";
+
   }, duration);
 
-  // 遷移
   setTimeout(() => {
     location.href = "room.html";
-  }, duration + 300);
+  }, duration + 700);
 </script>
 
 </body>
 </html>
+
 
 
