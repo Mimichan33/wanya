@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  background: #9bb6d9; /* LINEっぽい背景 */
+  font-family: sans-serif;
+}
+
+/* 上の画像 */
+.top-image {
+  text-align: center;
+  padding: 12px 0;
+}
+
+.top-image img {
+  width: 80vw;
+  max-width: 420px;
+}
+
+/* トークエリア */
+.chat-area {
+  padding: 12px;
+  padding-bottom: 90px;
+}
+
+/* 共通 */
+.chat {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+/* ワドルディ側 */
+.chat.left {
+  align-items: flex-start;
+}
+
+.chat.left .icon {
+  width: 56px;
+  height: 56px;
+  margin-right: 8px;
+}
+
+.chat.left .bubble {
+  background: white;
+  padding: 12px 14px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+/* ユーザー側 */
+.chat.right {
+  justify-content: flex-end;
+}
+
+.chat.right .bubble {
+  background: #7df07d;
+  padding: 12px 14px;
+  border-radius: 18px;
+  max-width: 70%;
+}
+
+/* 入力欄 */
+.input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #eee;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.input-area input {
+  flex: 1;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.input-area button {
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  border: none;
+}
