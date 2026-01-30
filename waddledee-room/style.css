@@ -235,19 +235,18 @@ button:hover {
 
 .menu-buttons {
   position: absolute;
-  bottom: 18%;
+  bottom: 16%;
   left: 50%;
   transform: translateX(-50%);
-  width: 92vw;          /* 画面ほぼいっぱい */
-  max-width: 500px;     /* タブレットもOK */
+  width: 94vw;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
-  gap: 26px;            /* ボタン間も広く */
+  gap: 32px;   /* ボタン間をさらに広く */
 }
 
-
 .menu-buttons button {
-  padding: 28px 20px;   /* 縦をしっかり */
-  font-size: 26px;      /* 文字を大きく */
-  border-radius: 28px;
+  padding: 34px 24px;   /* かなり大きく */
+  font-size: 30px;      /* 文字を主役級に */
+  border-radius: 32px;
 }
