@@ -5,21 +5,36 @@
   <title>ワドルディの部屋</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="container">
-    <h1>おや？ワドルディがすやすや寝ているよ？</h1>
+<body class="room-bg">
 
-    <div class="waddledee">
-      <div class="mouth"></div>
-    </div>
+<div class="room-area">
 
+  <!-- 飾りゾーン -->
+  <div class="room-deco">
+
+    <!-- 話しているワドルディ（左） -->
+    <img src="talk1.gif" class="talk left">
+    <img src="talk2.gif" class="talk left second">
+
+    <!-- 木（右） -->
+    <img src="tree.png" class="tree">
+
+  </div>
+
+  <!-- 寝ているワドルディ -->
+  <img src="sleep.gif" class="sleep-waddle">
+
+  <!-- ボタンエリア -->
+  <div class="menu-buttons">
     <button onclick="location.href='game.html'">
       🎮 ワドルディとゲームをする
     </button>
-
     <button onclick="location.href='passcode.html'">
       💌 ワドルディのメッセージを見る
     </button>
   </div>
+
+</div>
+
 </body>
 </html>
