@@ -2,26 +2,41 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>room</title>
+  <title>ワドルディの部屋</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="room-bg">
 
-  <!-- 背景 -->
-  <div class="room-bg">
+<div class="room-area">
 
-    <!-- ボタン -->
-    <div class="room-buttons">
-      <button onclick="location.href='game.html'">
-        🎮 ゲームをする
-      </button>
-      <button onclick="location.href='passcode.html'">
-        💌 メッセージを見る
-      </button>
-    </div>
+  <!-- 背景用 大きな画像ゾーン -->
+  <div class="room-visual">
+
+    <!-- 大きな木（一番奥） -->
+    <img src="tree.png" class="bg-tree">
+
+    <!-- 話しているワドルディ -->
+    <img src="talk1.gif" class="talk big left">
+    <img src="talk2.gif" class="talk big left second">
+
+    <!-- 寝ているワドルディ（主役） -->
+    <img src="sleep.gif" class="sleep-main">
 
   </div>
 
+  <!-- ボタンエリア（変更なし） -->
+  <div class="menu-buttons">
+    <button onclick="location.href='game.html'">
+      🎮 ワドルディとゲームをする
+    </button>
+    <button onclick="location.href='passcode.html'">
+      💌 ワドルディのメッセージを見る
+    </button>
+  </div>
+
+</div>
+
 </body>
 </html>
+
 
