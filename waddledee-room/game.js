@@ -1,29 +1,32 @@
-// ===== 初期設定 =====
 const answer = Math.floor(Math.random() * 100) + 1;
+const maxTry = 5;
+const passcode = "2743"; // ← 暗証番号
+
 let count = 0;
+let finished = false;
 
 const chatArea = document.getElementById("chatArea");
 const input = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 
-// ===== 送信処理 =====
-sendBtn.addEventListener("click", () => {
+sendBtn.addEventListener("click", sendMessage);
+
+function sendMessage() {
+  if (finished) return;
+
   const value = Number(input.value);
-  if (!value) return;
+  if (!value || value < 1 || value > 100) return;
 
   count++;
-
-  // ユーザーの吹き出しを追加
   addUserMessage(value);
   input.value = "";
 
-  // 少し待ってワドルディ返信
   setTimeout(() => {
     replyFromWaddledee(value);
   }, 600);
-});
+}
 
-// ===== ユーザー吹き出し =====
+/* ユーザー吹き出し */
 function addUserMessage(text) {
   const chat = document.createElement("div");
   chat.className = "chat right";
@@ -37,23 +40,27 @@ function addUserMessage(text) {
   scrollBottom();
 }
 
-// ===== ワドルディ返信 =====
+/* ワドルディ返信 */
 function replyFromWaddledee(value) {
   let message = "";
+  let isSuccess = false;
 
   if (value === answer) {
-    message = "正解だよ！🎉";
+    message = `🎉 正解だよ！\n暗証番号は【${passcode}】だよ！`;
+    isSuccess = true;
+    finished = true;
+  } else if (count >= maxTry) {
+    message = `残念…😢\n正解は ${answer} だったよ。\nまた遊んでね！`;
+    finished = true;
   } else if (value < answer) {
     message = "もっと大きいよ！";
   } else {
     message = "もっと小さいよ！";
   }
 
-  // chat全体
   const chat = document.createElement("div");
   chat.className = "chat left";
 
-  // アイコン
   const icon = document.createElement("img");
   icon.src = "img02.png";
   icon.className = "icon";
@@ -62,25 +69,34 @@ function replyFromWaddledee(value) {
   chatArea.appendChild(chat);
   scrollBottom();
 
-  // 少し待って吹き出し表示
   setTimeout(() => {
     const bubble = document.createElement("div");
     bubble.className = "bubble left-bubble hidden";
+    if (isSuccess) bubble.classList.add("success");
     bubble.textContent = message;
 
     chat.appendChild(bubble);
 
-    // アニメーション開始
     setTimeout(() => {
       bubble.classList.remove("hidden");
       bubble.classList.add("show");
       scrollBottom();
     }, 50);
 
+    if (finished) disableInput();
+
   }, 500);
 }
 
-// ===== 下までスクロール =====
+/* 入力無効化 */
+function disableInput() {
+  input.disabled = true;
+  sendBtn.disabled = true;
+  sendBtn.textContent = "終了";
+}
+
+/* スクロール */
 function scrollBottom() {
   window.scrollTo(0, document.body.scrollHeight);
 }
+
