@@ -25,22 +25,31 @@
   <p id="loading-text">読み込み中...</p>
 
 </div>
-  <body class="loading-bg">
+<body class="loading-bg" id="page">
 
 
 <script>
   const duration = 3000;
+  const page = document.getElementById("page");
+  const text = document.getElementById("loading-text");
+  const run = document.getElementById("waddle-run");
 
+  // 読込み完了時
   setTimeout(() => {
-    // 文字変更
-    document.getElementById("loading-text").textContent = "読み込み完了！";
-
+    text.textContent = "読み込み完了！";
   }, duration);
 
+  // フェードアウト開始
+  setTimeout(() => {
+    page.classList.add("fade-out");
+  }, duration + 400);
+
+  // 遷移
   setTimeout(() => {
     location.href = "room.html";
   }, duration + 1700);
 </script>
+
 
 </body>
 </html>
