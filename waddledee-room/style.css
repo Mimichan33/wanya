@@ -84,7 +84,6 @@ button:hover {
   background-size: 120px;
   background-repeat: repeat;
   opacity: 0.08;
-  transform: rotate(-8deg);
   pointer-events: none;
 }
 
