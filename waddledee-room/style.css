@@ -111,7 +111,7 @@ button:hover {
   position: absolute;
   bottom: 30px;
   left: 0;
-  width: 48vw;
+  width: 32vw;
   max-width: 170px;
   animation: move 3s linear forwards;
   z-index: 2;
