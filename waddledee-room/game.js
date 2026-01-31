@@ -46,23 +46,23 @@ function replyFromWaddledee(value) {
   let isSuccess = false;
 
   if (value === answer) {
-    message = `🎉 正解わにゃ！\n暗証番号は【${passcode}】わにゃ！`;
+    message = `🎉 正解わにゃ！`<br>`\n暗証番号は【${passcode}】わにゃ！`;
     isSuccess = true;
     finished = true;
   } else if (count >= maxTry) {
-    message = `残念わにゃ…😢\n正解は ${answer} だったわにゃ。\nまた遊んでわにゃ！`;
+    message = `残念わにゃ…😢`<br>`\n正解は ${answer} だったわにゃ。`<br>`\nまた遊んでわにゃ！`;
     finished = true;
 } else if (value < answer) {
   const remain = maxTry - count;
-  message = `もっと大きいわにゃ！\n残り${remain}回わにゃ！`;
+  message = `もっと大きいわにゃ！`<br>`\n残り${remain}回わにゃ！`;
   if (remain === 1) {
-    message += "\nドキドキわにゃ...！";
+    message += <br>"\nドキドキわにゃ...！";
   }
 } else {
   const remain = maxTry - count;
-  message = `もっと小さいわにゃ！\n残り${remain}回わにゃ！`;
+  message = `もっと小さいわにゃ！`<br>`\n残り${remain}回わにゃ！`;
   if (remain === 1) {
-    message += "\nドキドキわにゃ...！";
+    message += <br>"\nドキドキわにゃ...！";
   }
 }
 
