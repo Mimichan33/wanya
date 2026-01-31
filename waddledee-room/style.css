@@ -5,6 +5,10 @@ body {
   text-align: center;
 }
 
+.bubble {
+  white-space: pre-line;
+}
+
 .container {
   padding: 40px 20px;
 }
@@ -162,7 +166,7 @@ button:hover {
 
 #page {
   opacity: 1;
-  transition: opacity 1.6s ease;
+  transition: opacity 0.6s ease;
 }
 
 #page.fade-out {
@@ -370,9 +374,6 @@ button:hover {
   z-index: 2;
 }
 
-.bubble {
-  white-space: pre-line;
-}
 
 
 /* 吹き出しのしっぽ */
