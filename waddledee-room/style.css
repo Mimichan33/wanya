@@ -370,6 +370,11 @@ button:hover {
   z-index: 2;
 }
 
+.bubble {
+  white-space: pre-line;
+}
+
+
 /* 吹き出しのしっぽ */
 .message-bubble::after {
   content: "";
