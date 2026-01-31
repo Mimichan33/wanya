@@ -227,7 +227,7 @@ button:hover {
 /* 寝てるワドルディ（主役） */
 .sleep-main {
   position: absolute;
-  right: 5%;
+  right: -10%;
   bottom: 20%;
   width: 78vw;
   max-width: 800px;
