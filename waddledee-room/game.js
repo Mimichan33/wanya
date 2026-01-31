@@ -40,34 +40,11 @@ function addUserMessage(text) {
   scrollBottom();
 }
 
+
 /* ワドルディ返信 */
-function replyFromWaddledee(value) {
-  let message = "";
-  let isSuccess = false;
 
-  if (value === answer) {
-    message = `🎉 正解わにゃ！\n暗証番号は【${passcode}】わにゃ！`;
-    isSuccess = true;
-    finished = true;
-  } else if (count >= maxTry) {
-    message = `残念わにゃ…😢\n正解は ${answer} だったわにゃ。\nまた遊んでわにゃ！`;
-    finished = true;
-} else if (value < answer) {
-  const remain = maxTry - count;
-  message = `もっと大きいわにゃ！\n残り${remain}回わにゃ！`;
-  if (remain === 1) {
-    message += "\nドキドキわにゃ...！";
-  }
-} else {
-  const remain = maxTry - count;
-  message = `もっと小さいわにゃ！\n残り${remain}回わにゃ！`;
-  if (remain === 1) {
-    message += "\nドキドキわにゃ...！";
-  }
-}
-
-
-
+/* ワドルディの吹き出し（再利用用） */
+function addWaddledeeMessage(text, delay = 0, isSuccess = false) {
   const chat = document.createElement("div");
   chat.className = "chat left";
 
@@ -83,7 +60,7 @@ function replyFromWaddledee(value) {
     const bubble = document.createElement("div");
     bubble.className = "bubble left-bubble hidden";
     if (isSuccess) bubble.classList.add("success");
-    bubble.textContent = message;
+    bubble.textContent = text;
 
     chat.appendChild(bubble);
 
@@ -92,11 +69,45 @@ function replyFromWaddledee(value) {
       bubble.classList.add("show");
       scrollBottom();
     }, 50);
-
-    if (finished) disableInput();
-
-  }, 500);
+  }, delay);
 }
+
+function replyFromWaddledee(value) {
+  let message = "";
+  let isSuccess = false;
+
+  const remain = maxTry - count;
+  const diff = Math.abs(value - answer);
+  const isNear = diff <= 5 && value !== answer;
+
+  if (value === answer) {
+    message = `🎉 正解わにゃ！\n暗証番号は【${passcode}】わにゃ！`;
+    isSuccess = true;
+    finished = true;
+  } else if (count >= maxTry) {
+    message = `残念わにゃ…😢\n正解は ${answer} だったわにゃ。\nまた遊んでわにゃ！`;
+    finished = true;
+  } else if (value < answer) {
+    message = `もっと大きいわにゃ！\n残り${remain}回わにゃ！`;
+    if (remain === 1) message += "\nドキドキわにゃ...！";
+  } else {
+    message = `もっと小さいわにゃ！\n残り${remain}回わにゃ！`;
+    if (remain === 1) message += "\nドキドキわにゃ...！";
+  }
+
+  /* メインの返事 */
+  addWaddledeeMessage(message, 500, isSuccess);
+
+  /* 近いときの追加吹き出し */
+  if (!finished && isNear) {
+    addWaddledeeMessage("ちかいわにゃ！！", 1200);
+  }
+
+  if (finished) {
+    setTimeout(disableInput, 1500);
+  }
+}
+
 
 /* 入力無効化 */
 function disableInput() {
